@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+<h1>Наши товары:</h1>
+
+{% for item in items %}
+    <div class="item_block">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p>{{ item.get_price_in_dollars }}$</p>
+    </div>
+
+
+    <form action="/buy/{{ item.id }}" method="GET">
+        <button type="submit" id="checkout-button">Купить сейчас!</button>
+    </form>
+
+    <a href="item/{{ item.id }}">Подробнее о товаре</a>
+    <br>
+
+{% endfor %}
+
+</body>
+</html>

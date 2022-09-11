@@ -1,0 +1,6 @@
+.item_block {
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-width: 12px;
+}
